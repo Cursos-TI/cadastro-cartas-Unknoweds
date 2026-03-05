@@ -7,7 +7,7 @@ int main() {
   char estado1; //caractere para definir um estado ex: A ou B
   char codigo1[4]; //código para definir um estado ex: A01 ou B01
   char cidade1[50]; //nome da cidade 
-  int populacao1; //número de habitantes
+  unsigned long int populacao1; //número de habitantes
   float area1; //área total
   float pib1; //pib total da cidade
   int pt1; //número de pontos turísticos da cidade aproximadamente
@@ -51,13 +51,19 @@ int main() {
   printf("A densidade demográfica da cidade é: %.2f hab/km²\n", densidade1);
   printf("O PIB per capita da cidade é: %.2f reais\n", pib_per_capita1);
 
+  inverso_densidade1 = area1 / populacao1; //cálculo do inverso da densidade demográfica
+  printf("O inverso da densidade demográfica da cidade1 é: %.6f km²/hab\n", inverso_densidade1);
+
+  super_poder1 = (float) (populacao1 + area1 + pib1 + pt1 + pib_per_capita1 + inverso_densidade1);
+  printf("O super poder da cidade1 é: %.2f\n", super_poder1);
+
 // Carta 2
   printf("carta 2\n");
 
   char estado2; //caractere para definir um estado ex: A ou B
   char codigo2[4]; //código para definir um estado ex: A01 ou B01
   char cidade2[50]; //nome da cidade 
-  int populacao2; //número de habitantes
+  unsigned long int populacao2; //número de habitantes
   float area2; //área total
   float pib2; //pib total da cidade
   int pt2; //número de pontos turísticos da cidade aproximadamente
@@ -100,6 +106,12 @@ int main() {
 
   printf("A densidade demográfica da cidade2 é: %.2f hab/km²\n", densidade2);
   printf("O PIB per capita da cidade2 é: %.2f reais\n", pib_per_capita2);
+
+  inverso_densidade2 = area2 / populacao2; //cálculo do inverso da densidade demográfica
+  printf("O inverso da densidade demográfica da cidade2 é: %.6f km²/hab\n", inverso_densidade2);
+
+  super_poder2 = (float) (populacao2 + area2 + pib2 + pt2 + pib_per_capita2 + inverso_densidade2);
+  printf("O super poder da cidade2 é: %.2f\n", super_poder2);
   
   return 0;
 }
