@@ -26,8 +26,8 @@ int main() {
   printf("A cidade é: %s\n", cidade1); 
 
   printf("Digite o número de habitantes:");
-  scanf("%d", &populacao1);
-  printf("O número de habitantes é: %d habitantes\n", populacao1);
+  scanf("%lu", &populacao1);
+  printf("O número de habitantes é: %lu habitantes\n", populacao1);
 
   printf("Digite a área total:");
   scanf("%f", &area1);
@@ -43,6 +43,8 @@ int main() {
 
   float densidade1; //densidade demográfica da cidade
   float pib_per_capita1; //PIB per capita da cidade
+  float inverso_densidade1; //inverso da densidade demográfica
+  float super_poder1; //super poder da cidade
 
   densidade1 = populacao1 / area1; //cálculo da densidade demográfica
   pib_per_capita1 = pib1 * 1000000000 / populacao1; //cálculo do PIB per capita 
@@ -82,8 +84,8 @@ int main() {
   printf("A cidade2 é: %s\n", cidade2); 
 
   printf("Digite o número de habitantes2:");
-  scanf("%d", &populacao2);
-  printf("O número de habitantes2 é: %d habitantes\n", populacao2);
+  scanf("%lu", &populacao2);
+  printf("O número de habitantes2 é: %lu habitantes\n", populacao2);
 
   printf("Digite a área total2:");
   scanf("%f", &area2);
@@ -99,7 +101,8 @@ int main() {
 
   float densidade2; //densidade demográfica da cidade
   float pib_per_capita2; //PIB per capita da cidade
-
+  float inverso_densidade2; //inverso da densidade demográfica
+  float super_poder2; //super poder da cidade
   densidade2 = populacao2 / area2; //cálculo da densidade demográfica
   pib_per_capita2 = pib2 * 1000000000 / populacao2; //cálculo do PIB per capita 
   //obs: para calcular pib per capita, o PIB deve ser convertido para a mesma unidade da população, ou seja, bilhões de reais para milhões de habitantes. Para isso, basta multiplicar o PIB por 1000 antes de dividir pela população.
@@ -112,6 +115,29 @@ int main() {
 
   super_poder2 = (float) (populacao2 + area2 + pib2 + pt2 + pib_per_capita2 + inverso_densidade2);
   printf("O super poder da cidade2 é: %.2f\n", super_poder2);
+
+  int comparacao_populacao; //variável para comparação de população
+  int comparacao_area; //variável para comparação de área
+  int comparacao_pib; //variável para comparação de PIB
+  int comparacao_pt; //variável para comparação de pontos turísticos
+  int comparacao_pib_per_capita; //variável para comparação de PIB per capita
+  int comparacao_inverso_densidade; //variável para comparação do inverso
+  int comparacao_super_poder; //variável para comparação do super poder
   
+  // comparação entre as cartas
+  comparacao_populacao = (populacao1 > populacao2) ? 1 : 0; 
+  printf("Comparação de população: %s\n", comparacao_populacao ? "(1) carta 1 venceu": "(0) carta 2 venceu");
+  comparacao_area = (area1 > area2) ? 1 : 0;
+  printf("Comparação de área: %s\n", comparacao_area ? "(1) carta 1 venceu": "(0) carta 2 venceu");
+  comparacao_pib = (pib1 > pib2) ? 1 : 0;
+  printf("Comparação de PIB: %s\n", comparacao_pib ? "(1) carta 1 venceu": "(0) carta 2 venceu");
+  comparacao_pt = (pt1 > pt2) ? 1 : 0;
+  printf("Comparação de pontos turísticos: %s\n", comparacao_pt ? "(1) carta 1 venceu": "(0) carta 2 venceu");
+  comparacao_pib_per_capita = (pib_per_capita1 > pib_per_capita2) ? 1 : 0;
+  printf("Comparação de PIB per capita: %s\n", comparacao_pib_per_capita ? "(1) carta 1 venceu": "(0) carta 2 venceu");
+  comparacao_inverso_densidade = (inverso_densidade1 > inverso_densidade2) ? 1 : 0;
+  printf("Comparação do inverso da densidade demográfica: %s\n", comparacao_inverso_densidade ? "(1) carta 1 venceu": "(0) carta 2 venceu");
+  comparacao_super_poder = (super_poder1 > super_poder2) ? 1 : 0;
+  printf("Comparação do super poder: %s\n", comparacao_super_poder ? "(1) carta 1 venceu": "(0) carta 2 venceu");
   return 0;
 }
