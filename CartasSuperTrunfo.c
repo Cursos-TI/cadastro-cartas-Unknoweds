@@ -139,5 +139,16 @@ int main() {
   printf("Comparação do inverso da densidade demográfica: %s\n", comparacao_inverso_densidade ? "(1) carta 1 venceu": "(0) carta 2 venceu");
   comparacao_super_poder = (super_poder1 > super_poder2) ? 1 : 0;
   printf("Comparação do super poder: %s\n", comparacao_super_poder ? "(1) carta 1 venceu": "(0) carta 2 venceu");
+  
+  
+// comparação entre um elemento das cartas com estrutura if_else
+  int populacao_comparacao1 = 123250000;
+  int populacao_comparacao2 = 347657;
+
+  if(populacao_comparacao1 > populacao_comparacao2) {
+    printf("Carta 1 vence!\n");
+  } else {
+    printf("Carta 2 vence!\n");
+  }
   return 0;
 }
