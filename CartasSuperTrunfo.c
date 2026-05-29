@@ -227,7 +227,7 @@ if (populacao1 > populacao2) {
 } else {
   printf("EMPATE!\n");
 } 
-\n
+
 if (area1 > area2) {
   printf("Comparação das cidades %s e %s:\n", cidade1, cidade2);
   printf("Atributo de comparação: Área\n");
@@ -241,7 +241,7 @@ if (area1 > area2) {
 } else {
   printf("EMPATE!\n");
 }
-\n
+
 if (pib1 > pib2) {
   printf("Comparação das cidades %s e %s:\n", cidade1, cidade2);
   printf("Atributo de comparação: PIB\n");
@@ -255,7 +255,7 @@ if (pib1 > pib2) {
 } else {
   printf("EMPATE!\n");
 }
-\n
+
 if (pt1 > pt2) {
   printf("Comparação das cidades %s e %s:\n", cidade1, cidade2);
   printf("Atributo de comparação: Pontos turísticos\n");
@@ -269,7 +269,7 @@ if (pt1 > pt2) {
 } else {
   printf("EMPATE!\n");
 }
-\n
+
 if (densidade1 < densidade2) {
   printf("Comparação das cidades %s e %s:\n", cidade1, cidade2);
   printf("Atributo de comparação: Densidade demográfica\n");
@@ -283,6 +283,99 @@ if (densidade1 < densidade2) {
 } else {
   printf("EMPATE!\n");
 }
+
+//lógica de comparação mais sofisticada, utilizando switch, operador ternário, if else e munus interativos
+
+int resultado1, resultado2;
+char primeiroAtributo, segundoAtributo;
+int ataque1, ataque2, defesa1, defesa2, recuo1, recuo2;
+ataque1 = populacao1;
+ataque2 = populacao2;
+defesa1= area1;
+defesa2 = area2;
+recuo1 = pib1;
+recuo2 = pib2;
+
+//início do jogo
+
+printf("***Bem-vindo ao jogo!***\n");
+printf("Escolha o primeiro atributo\n");
+printf("A.ataque\n");
+printf("D.defesa\n");
+printf("R.recuo\n");
+
+printf("Escolha a comparação do primeiro atributo (A, D ou R): ");
+scanf(" %c", &primeiroAtributo);
+
+switch (primeiroAtributo) {
+  case 'A':
+  case 'a':
+    printf("você escolheu a comparação de ATAQUE.\n");
+    resultado1 = (ataque1 > ataque2) ? 1 : 0;
+    break;
+  case 'D':
+  case 'd':
+    printf("você escolheu a comparação de DEFESA.\n");
+    resultado1 = (defesa1 > defesa2) ? 1 : 0;
+    break;
+  case 'R':
+  case 'r':
+    printf("você escolheu a comparação de RECUO.\n");
+    resultado1 = (recuo1 > recuo2) ? 1 : 0;
+    break;
+  default:
+    printf("OPÇÃO INVÁLIDA! ERROR\n");
+}
+
+  printf("Escolha a comparação do segundo atributo (A, D ou R): ");
+  scanf(" %c", &segundoAtributo);
+
+  if (primeiroAtributo == segundoAtributo) {
+    printf(  "OPÇÃO INVÁLIDA! Você já escolheu esse atributo, você de escolher outro atributo para comparar. ERRRROR\n");
+  } else {
+    switch (segundoAtributo) {
+      case 'A':
+      case 'a':
+        printf("você escolheu a comparação de ATAQUE.\n");
+        resultado2 = (ataque1 > ataque2) ? 1 : 0;
+        break;
+      case 'D':
+      case 'd':
+        printf("você escolheu a comparação de DEFESA.\n");
+        resultado2 = (defesa1 > defesa2) ? 1 : 0;
+        break;
+      case 'R':
+      case 'r':
+        printf("você escolheu a comparação de RECUO.\n");
+        resultado2 = (recuo1 > recuo2) ? 1 : 0;
+        break;
+      default:
+        printf("OPÇÃO INVÁLIDA! ERROR\n");
+    }
+  }
+
+  if (resultado1 == 1 && resultado2 == 1) {
+    printf("Comparação das cidades %s e %s:\n", cidade1, cidade2);
+    printf("Atributos de comparação: %c e %c\n", primeiroAtributo, segundoAtributo);
+    printf("valores do primeiro atributo: %d e do segundo atributo: %d\n", resultado1, resultado2);
+    printf("O resultado da comparação é: %d\n", resultado1 + resultado2);
+    printf("Parabéns! Você GANHOU!\n");
+  } else if (resultado1 == 0 && resultado2 == 1 || resultado1 == 1 && resultado2 == 0) {
+    printf("Comparação das cidades %s e %s:\n", cidade1, cidade2);
+    printf("Atributos de comparação: %c e %c\n", primeiroAtributo, segundoAtributo);
+    printf("valores do primeiro atributo: %d e do segundo atributo: %d\n", resultado1, resultado2);
+    printf("O resultado da comparação é: %d\n", resultado1 + resultado2);
+    printf("EMPATE!\n");
+  } else {
+    printf("Comparação das cidades %s e %s:\n", cidade1, cidade2);
+    printf("Atributos de comparação: %c e %c\n", primeiroAtributo, segundoAtributo);
+    printf("valores do primeiro atributo: %d e do segundo atributo: %d\n", resultado1, resultado2);
+    printf("O resultado da comparação é: %d\n", resultado1 + resultado2);
+    printf("Que pena! você PERDEU!\n");
+  }
+
+  
+
 
   return 0;
 }
